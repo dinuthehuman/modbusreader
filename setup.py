@@ -9,7 +9,7 @@ setup(
     include_package_data=True,
     setup_requires=['wheel'],
     install_requires=[
-        "paho.mqtt",
+        "paho.mqtt==1.6.1",
         "minimalmodbus"
     ]
 )
