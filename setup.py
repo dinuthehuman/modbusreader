@@ -7,7 +7,7 @@ setup(
     packages=find_packages(),
     python_requires='>=3.9, <4',
     include_package_data=True,
-    setup_requires=['wheel, setuptools'],
+    setup_requires=['wheel'],
     install_requires=[
         "paho.mqtt",
         "minimalmodbus"

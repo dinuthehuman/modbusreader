@@ -62,6 +62,7 @@ class ModbusReader:
     def __init__(self):
         self.client_mqtt = mqtt.Client(ModbusReader.CLIENT_ID)
         self.client_mqtt.on_connect = ModbusReader._on_connect
+        self.client_mqtt.username_pw_set("dinu", "&94:would:malta:50&")
         self.client_mqtt.loop_start()
         self.client_mqtt.connect(ModbusReader.BROKER_MQTT, ModbusReader.PORT_MQTT, keepalive=60)
         # Define the Modbus RTU device
