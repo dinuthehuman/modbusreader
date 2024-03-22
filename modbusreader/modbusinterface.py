@@ -85,6 +85,7 @@ class ModbusReader:
     def read_publish(self):
         try:
             data = json.loads(ModbusReader._em_data)
+            print(data)
             # Storing the values in the json structure
             data['sys']['Hz'] = round((self.instrument.read_register(0x33, 2) * 10), 2)
             data['sys']['kWh+'] = round((self.instrument.read_register(0x34, 2) * 10), 2)
@@ -105,7 +106,7 @@ class ModbusReader:
             # Publish the data on the local mqtt broker
             self.client_mqtt.publish("s2/appmodule/em/1", payload=json.dumps(data))
         except Exception as e:
-            pass
+            print(type(e))
 
     def run(self):
         while 1:
