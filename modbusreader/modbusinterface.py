@@ -66,7 +66,7 @@ class ModbusReader:
         self.client_mqtt.loop_start()
         self.client_mqtt.connect(ModbusReader.BROKER_MQTT, ModbusReader.PORT_MQTT, keepalive=60)
         # Define the Modbus RTU device
-        self.instrument = minimalmodbus.Instrument('/dev/ttyAMA0', 1)  # '/dev/ttyUSB0' is the port, and 1 is the slave address
+        self.instrument = minimalmodbus.Instrument('/dev/ttyUSB0', 1)  # '/dev/ttyUSB0' is the port, and 1 is the slave address
 
         # Set the communication parameters (baudrate, byte size, parity, stop bits)
         self.instrument.serial.baudrate = 115200
